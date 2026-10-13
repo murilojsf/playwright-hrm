@@ -17,5 +17,5 @@ npm install
 #You open the playwright UI
 npx playwright test --ui
 
-Click on the Play button or press F5 to run the test
+Click on the Play button or press F5 to run the tests
 ```
