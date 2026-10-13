@@ -1,10 +1,10 @@
 export class DashboardPage{
     constructor(page){
         this.page = page; 
-        this.dashboardHeader = page.getByText('Dashboard', { exact: true })
+        this.dashboardHeader = page.getByRole('heading', { name: 'Dashboard' })
     }
 
     async checkDashboardPage(){
-        await this.dashboardHeader
+        return this.dashboardHeader
     }
 }

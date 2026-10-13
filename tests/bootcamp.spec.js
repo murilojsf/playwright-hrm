@@ -13,7 +13,7 @@ test('Login', async ({ page }) => {
     await page.getByRole('textbox', { name: 'password'}).fill('admin123')
     await page.getByRole('button' , { name: 'Login' }).click()
     await expect(page).toHaveURL('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
-    await page.getByText('Dashboard', { exact: true })
+    await expect(page.getByRole('heading', { name: 'Dashboard' })).toBeVisible()
   })
 
 test('Login PO', async ({ page }) => {
@@ -22,6 +22,6 @@ test('Login PO', async ({ page }) => {
 
     
     await login.loginWithUser()
-    await dashboard.checkDashboardPage()
+    await expect(await dashboard.checkDashboardPage()).toBeVisible()
     await expect(page).toHaveURL('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
   })
